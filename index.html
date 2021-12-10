@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>IP Address Tracker</title>
+
+  <!-- CSS STARTED -->
+  <link rel="stylesheet" href="css/ip-tracker.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+  <!-- CSS ENDED -->
+
+  <!-- JS STARTED -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+  
+  <!-- JS ENDED -->
+</head>
+<body>
+  <div class="wrapper-container">
+    <div class="header">
+        <h1>IP Address Tracker</h1>
+        <form name="ip-form" onSubmit="return false;">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search for any IP address or domain" id="ip-search" name="ip-search">
+            <div class="input-group-append" onclick="searchIp()">
+              <span class="input-group-text">
+                  <i class="fas fa-chevron-right"></i>
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="ip-details">
+        <div class="row">
+          <div class="col-sm-3 draw-line">
+            <label>IP Address</label>
+            <h5 id="ip_address"></h5>
+          </div>
+          <div class="col-sm-3 draw-line">
+            <label>Location</label>
+            <h5 id="ip_country"></h5>
+          </div>
+          <div class="col-sm-3 draw-line">
+            <label>Timezone</label>
+            <h5 id="ip_timezone"></h5>
+          </div>
+          <div class="col-sm-3">
+            <label>ISP</label>
+            <h5 id="ip_isp"></h5>
+          </div>
+        </div>
+      </div>
+    
+    <div id='map'></div>
+  </div>
+  <script src="js/ip-tracker.js"></script>
+</body>
+</html>
